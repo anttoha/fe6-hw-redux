@@ -4,8 +4,8 @@ import { addContact } from "../redux/slices/contactsSlice";
 
 const Form = () => {
   const dispatch = useDispatch();
-  const [nameValue, setNameValue] = useState();
-  const [phoneValue, setPhoneValue] = useState();
+  const [nameValue, setNameValue] = useState("");
+  const [phoneValue, setPhoneValue] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +14,7 @@ const Form = () => {
     dispatch(addContact({ name: nameValue, phone: phoneValue }));
 
     setNameValue("");
-    phoneValue("");
+    setPhoneValue("");
   };
 
   return (
